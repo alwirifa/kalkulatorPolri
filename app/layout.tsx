@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "HITUNG NILAI AKADEMIK, NILAI MENUJU RIKKES II & NILAI AKHIR",
   description: "KALKULATOR HITUNG NILAI AKADEMIK, NILAI MENUJU RIKKES II & NILAI AKHIR",
+  icons: {
+    icon:['/favicon/favicon.ico?v=4'],
+    apple:['favicon/apple-touch-icon.png?v=4'],
+    shortcut:['/favicon/apple-touch-icon.png']
+  }
 };
 
 export default function RootLayout({
