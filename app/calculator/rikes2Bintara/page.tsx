@@ -27,10 +27,13 @@ const Rikes2Bintara = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setScores({ ...scores, [name]: value });
+    if (parseFloat(value) > 100) {
+      setScores({ ...scores, [name]: '100' });
+    } else {
+      setScores({ ...scores, [name]: value });
+    }
     setError(null); // Reset error message on input change
   };
-
   const handleCalculate = () => {
     if (!scores.academic || !scores.psychology) {
       setError('Semua bidang harus diisi!');
@@ -56,7 +59,7 @@ const Rikes2Bintara = () => {
   };
 
   return (
-    <div className='h-screen w-full bg-zinc-200 flex flex-col items-center overflow-scroll pb-6 px-6'>
+    <div className='h-screen w-full bg-bg-mobile md:bg-bg-home bg-cover flex flex-col items-center overflow-y-auto ll pb-6 px-6'>
     <Image src='/icons/logo.png' height={200} width={200} alt='logo' />
     <div className="flex flex-col bg-white rounded-xl shadow-lg mt-6 w-full sm:w-4/5 md:w-3/5 xl:w-2/5">
         <div className='flex flex-col p-6 space-y-1'>
@@ -93,8 +96,8 @@ const Rikes2Bintara = () => {
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           <div className='pt-4 w-full'>
-            <button type="submit" className='px-4 py-2 rounded-md text-sm font-semibold text-white bg-zinc-900 hover:bg-zinc-800 w-full'>Hitung</button>
-          </div>
+          <button type="submit" className='px-4 py-3 rounded-md text-sm font-semibold text-white bg-gradient-to-r from-[#BA0408] to-[#F37834] hover:bg-zinc-800 w-full'>Hitung</button>
+ </div>
         </form>
 
         {showResult && (
@@ -117,8 +120,8 @@ const Rikes2Bintara = () => {
               </div>
             </div>
             <div className='pt-4 px-6 pb-6 w-full'>
-              <button type="button" onClick={handleBack} className='px-4 py-2 rounded-md text-sm font-semibold text-white bg-zinc-900 hover:bg-zinc-800 w-full'>Kembali</button>
-            </div>
+            <button type="button" onClick={handleBack} className='px-4 py-3 rounded-md text-sm font-semibold text-white bg-gradient-to-r from-[#BA0408] to-[#F37834] hover:bg-zinc-800 w-full'>Kembali</button>
+             </div>
           </div>
         )}
       </div>

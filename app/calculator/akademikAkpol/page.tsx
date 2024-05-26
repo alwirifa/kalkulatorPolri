@@ -29,11 +29,15 @@ const AkademikAkpol = () => {
 
   const [showResult, setShowResult] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setScores({ ...scores, [name]: value });
+    if (parseFloat(value) > 100) {
+      setScores({ ...scores, [name]: '100' });
+    } else {
+      setScores({ ...scores, [name]: value });
+    }
     setError(null); // Reset error message on input change
   };
 
@@ -66,8 +70,8 @@ const AkademikAkpol = () => {
   };
 
   return (
-    <div className='h-screen w-full bg-zinc-200 flex flex-col items-center overflow-scroll pb-6 px-6'>
-      <Image src='/icons/logo.png' height={200} width={200} alt='logo' />
+    <div className='h-screen w-full bg-bg-mobile md:bg-bg-home bg-cover  flex flex-col items-center overflow-y-auto pb-6 px-6'>
+      <Image src='/icons/logo.svg' height={200} width={200} alt='logo' />
       <div className="flex flex-col bg-white rounded-xl shadow-lg mt-6 w-full sm:w-4/5 md:w-3/5 xl:w-2/5">
         <div className='flex flex-col p-6 space-y-1'>
           <h1 className="font-semibold tracking-tight text-xl">Kalkulator Akademik - AKPOL ( Tingkat Panda )</h1>
@@ -84,6 +88,7 @@ const AkademikAkpol = () => {
               className="h-10 w-full border rounded-md px-3 py-2 text-sm outline-none placeholder:text-zinc-500 focus:border-zinc-900 shadow-sm"
               value={scores.knowledge}
               onChange={handleChange}
+              max={100}
               required
             />
           </div>
@@ -98,6 +103,7 @@ const AkademikAkpol = () => {
               className="h-10 w-full border rounded-md px-3 py-2 text-sm outline-none placeholder:text-zinc-500 focus:border-zinc-900 shadow-sm"
               value={scores.citizenship}
               onChange={handleChange}
+              max={100}
               required
             />
           </div>
@@ -112,6 +118,7 @@ const AkademikAkpol = () => {
               className="h-10 w-full border rounded-md px-3 py-2 text-sm outline-none placeholder:text-zinc-500 focus:border-zinc-900 shadow-sm"
               value={scores.numerics}
               onChange={handleChange}
+              max={100}
               required
             />
           </div>
@@ -126,12 +133,13 @@ const AkademikAkpol = () => {
               className="h-10 w-full border rounded-md px-3 py-2 text-sm outline-none placeholder:text-zinc-500 focus:border-zinc-900 shadow-sm"
               value={scores.language}
               onChange={handleChange}
+              max={100}
               required
             />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           <div className='pt-4 w-full'>
-            <button type="submit" className='px-4 py-2 rounded-md text-sm font-semibold text-white bg-zinc-900 hover:bg-zinc-800 w-full'>Hitung</button>
+            <button type="submit" className='px-4 py-3 rounded-md text-sm font-semibold text-white bg-gradient-to-r from-[#BA0408] to-[#F37834] hover:bg-zinc-800 w-full'>Hitung</button>
           </div>
         </form>
 
@@ -157,7 +165,7 @@ const AkademikAkpol = () => {
               </div>
             </div>
             <div className='pt-4 px-6 pb-6 w-full'>
-              <button type="button" onClick={handleBack} className='px-4 py-2 rounded-md text-sm font-semibold text-white bg-zinc-900 hover:bg-zinc-800 w-full'>Kembali</button>
+              <button type="button" onClick={handleBack} className='px-4 py-3 rounded-md text-sm font-semibold text-white bg-gradient-to-r from-[#BA0408] to-[#F37834] hover:bg-zinc-800 w-full'>Kembali</button>
             </div>
           </div>
         )}
