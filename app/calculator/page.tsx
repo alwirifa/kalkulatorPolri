@@ -5,7 +5,7 @@ import React from 'react'
 
 type Props = {}
 
-const page = (props: Props) => {
+const Calculator = (props: Props) => {
   return (
     <div className="flex flex-col gap-6 p-8 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold text-zinc-900">HITUNG NILAI AKADEMIK, NILAI MENUJU RIKKES II & NILAI AKHIR</h1>
@@ -86,4 +86,4 @@ const page = (props: Props) => {
   )
 }
 
-export default page
+export default Calculator
