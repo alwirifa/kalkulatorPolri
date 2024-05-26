@@ -147,6 +147,9 @@ const AkademikBakomsus = () => {
           </div>
         )}
       </div>
+      <div className='h-full pt-6 flex items-end'>
+        <p className='text-xs md:text-sm'>Copyright ©2024 Bimbel Cakra Henta. All rights reserved.</p>
+      </div>
     </div>
   );
 };
