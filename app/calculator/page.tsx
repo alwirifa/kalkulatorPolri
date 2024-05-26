@@ -11,7 +11,7 @@ const Calculator = (props: Props) => {
     <div className="flex flex-col gap-6 p-8 bg-gray-100 min-h-screen items-center">
       <div className="flex flex-col items-center">
         <Image src="/icons/logo.png" height={150} width={150} alt="logo" />
-        <h1 className="text-lg xl:text-2xl font-bold text-zinc-900 mt-4">HITUNG NILAI AKADEMIK, NILAI MENUJU RIKKES II & NILAI AKHIR</h1>
+        <h1 className="text-lg xl:text-2xl font-bold text-zinc-900 mt-4 text-center">HITUNG NILAI AKADEMIK, NILAI MENUJU RIKKES II & NILAI AKHIR</h1>
       </div>
       
       <div className="flex flex-col gap-4 w-full max-w-md">
