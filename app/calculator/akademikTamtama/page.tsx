@@ -72,7 +72,7 @@ const AkademikTamtama = () => {
        <div className='flex flex-col p-6 space-y-1'>
           <h1 className="font-semibold tracking-tight text-xl">Kalkulator Akademik - TAMTAMA</h1>
         </div>
-        <form className="p-6 pt-0 grid gap-4 w-[500px]" onSubmit={(e) => { e.preventDefault(); handleCalculate(); }}>
+        <form className="p-6 pt-0 grid gap-4 w-full" onSubmit={(e) => { e.preventDefault(); handleCalculate(); }}>
           <div className="grid gap-2">
             <label htmlFor="knowledge" className="block text-sm font-medium leading-none text-zinc-950">
               Nilai Pengetahuan Umum <span className='text-red-500'>*</span>
