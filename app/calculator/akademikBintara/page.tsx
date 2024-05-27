@@ -33,10 +33,14 @@ const AkademikBintara = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setScores({ ...scores, [name]: value });
+    if (parseFloat(value) > 100) {
+      setScores({ ...scores, [name]: '100' });
+    } else {
+      setScores({ ...scores, [name]: value });
+    }
     setError(null); // Reset error message on input change
   };
-
+  
   const handleCalculate = () => {
     if (!scores.knowledge || !scores.citizenship || !scores.numerics || !scores.language) {
       setError('Semua bidang harus diisi!');
